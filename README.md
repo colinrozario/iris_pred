@@ -81,6 +81,4 @@ This is a small demo project; contributions are welcome. You might add:
 
 ---
 
----
-
 If you'd like, I can also add a `requirements.txt` and a `Makefile` or simple scripts to make running the app easier — tell me which you'd prefer.
