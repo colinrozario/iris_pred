@@ -1,7 +1,19 @@
 import streamlit as st
 import pandas as pd
-from sklearn.datasets import load_iris
-from sklearn.ensemble import RandomForestClassifier
+
+try:
+    from sklearn.datasets import load_iris
+    from sklearn.ensemble import RandomForestClassifier
+except ModuleNotFoundError as exc:
+    # Clear, friendly error message in the Streamlit UI so users on Streamlit Cloud
+    # or other hosting platforms see what to fix instead of a raw Python error.
+    st.error(
+        "Optional dependency missing: scikit-learn.\n"
+        "Install scikit-learn in your environment (e.g. `pip install scikit-learn`),\n"
+        "or add `scikit-learn` to `requirements.txt` in your repo and redeploy.\n"
+        "Original error: {}".format(exc)
+    )
+    st.stop()
 
 st.title("IRIS FLOWER PREDICTION APP")
 st.write("""
