@@ -69,6 +69,28 @@ Note: the model is trained every time the app runs — this is fine for demo/per
 .\.venv\Scripts\python -m streamlit run iris_pred.py
 ```
 
+### Fix for "ModuleNotFoundError: No module named 'sklearn'"
+
+If you get an error saying `No module named 'sklearn'` (or `ModuleNotFoundError` referencing `sklearn`), do the following:
+
+1. Add a `requirements.txt` to your repository containing required packages. For example:
+
+```
+streamlit
+scikit-learn
+pandas
+```
+
+2. If you're running locally, install dependencies with pip:
+
+```powershell
+pip install -r requirements.txt
+```
+
+3. If deploying on Streamlit Cloud, push the `requirements.txt` to your repo and redeploy — Streamlit Cloud installs the packages listed there during deployment.
+
+4. The app has an import check; if scikit-learn is missing the app will show a readable message instead of crashing. If the message persists after you have added `requirements.txt`, re-check logs in Streamlit Cloud (Manage app → Logs) or verify which environment your app runs in.
+
 ---
 
 ## Contributing 🤝
@@ -78,7 +100,3 @@ This is a small demo project; contributions are welcome. You might add:
 - A `requirements.txt` file with pinned package versions
 - A saved model and load-once pattern instead of training on every start
 - Unit tests for helper functions
-
----
-
-If you'd like, I can also add a `requirements.txt` and a `Makefile` or simple scripts to make running the app easier — tell me which you'd prefer.

@@ -1,0 +1,8 @@
+streamlit
+scikit-learn
+pandas
+
+# Optional: pin exact versions for reproducibility. Example:
+# streamlit==1.25.0
+# scikit-learn==1.3.0
+# pandas==2.2.2
