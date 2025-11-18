@@ -5,6 +5,14 @@ This project contains a simple Streamlit web application that predicts the speci
 
 ---
 
+## Try it live 🌐
+
+The app is deployed and can be viewed here: https://irispred1.streamlit.app/ — open this link to try the deployed version without running anything locally.
+
+> Note: If the deployed app shows an error about `sklearn` during the first visit, check the `requirements.txt` (should include `scikit-learn`) and redeploy; you can also follow the troubleshooting steps below.
+
+---
+
 ## Features ✅
 
 - Simple UI built with `streamlit`.
@@ -46,7 +54,6 @@ If port 8501 is busy, you can set a different port:
 streamlit run iris_pred.py --server.port 8502
 ```
 
----
 
 ## How it works — quick summary 💡
 
